@@ -1,0 +1,28 @@
+1. man command invokes the manual entry program. This program itself helps to find help documentations for other programs or commands like,
+   'man rm'. man rm will show us help docs for remove or rm command. We can use up and down arrows for scrolling and press q to get out.
+
+
+2. As per man ls, 'a' flag shows all the hidden files and folders (starting with '.'). 'l' flag will show the long listing format.
+
+3. By pressing Alt + left or right
+
+4. By pressing Control + e
+
+5. By pressing Control + a
+
+6. By pressing Control + w (while the cursor is at the end of the desired word)
+
+7. Terminal: A program that allows users to interact with computers through text based inputs and outputs.
+   Shell: A program that can interpret users' commands entered through terminal, and executes them on the OS. 
+
+8. Absolute path: The 'full' path showing complete hierarchy from the root folder
+
+9.   Relative path: The path with respect to a user's current location in the directory tree
+
+10. Flags work like optional parameters which provide extra functionalities. 
+    
+    Examples: 1) rm -rf xyz ( flags r and f Removes the folder including its contents)
+              2) cp -r (recursive copying with R)
+              4) ls -a (flag a shows the hidden files and folders)
+              
+11. rm -rf xyz ( flags r and f Removes the folder including its contents)
