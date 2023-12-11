@@ -1,0 +1,63 @@
+Part 1.
+===================================================================================
+1. "git branch <branch_name>"
+
+2. In fast-forward merging, no dedicated merge commit is made. This is because the main branch in this case does not have any new
+   commits which the feature branch is not aware of. So, when it is time to merge, git simply moves the pointer to master forward 
+   in time by pointing to the latest commit in the feature branch. It refects the change from just one branch.
+
+   Recursive strategy is used when the main branch itself has evolved and contains new commits which the feature or dev branch is not
+   aware of. So merging involves combining changes from BOTH branches. Therefore, a dedicated merge commit must be made upon
+   entering the merge command. 
+
+3. "git checkout <branch_name>"
+
+4. "git branch -d <branch_name>"
+
+5. One possible way: Say our main branch has "hello.txt". Now we create a new dev branch. A developer starts modifying "hello.txt" from
+   the dev branch and makes a commit. Meanwhile, another developer starts working on "hello.txt" from the main branch, and makes a new 
+   commit. Now, if we want to merge the dev onto the main, git will not know which version to keep. In such a case, we have to manually
+   modify the file to keep the desired change, after which we must manually add and commit to complete the merge.
+
+=====================================================================================
+part 2
+=====================================================================================
+Fast Forward Merging:
+                     mkdir demo
+                     cd demo
+                     git init
+                     echo "hello" > first.txt 
+                     git add . && git commit -m "add first.txt"
+                     git checkout -b dev
+                     echo "hello from dev" >> first.txt
+                     git add . && git commit -m "modify first.txt"
+                     git checkout master 
+                     git merge dev
+
+
+Recursive Merging:
+                     mkdir demo
+                     cd demo
+                     git init
+                     echo "hello" > first.txt 
+                     git add . && git commit -m "add first.txt"
+                     git checkout -b dev
+                     echo "hello from dev" >> second.txt
+                     git add second.txt && git commit -m "create second.txt"
+                     git checkout master 
+                     echo "mod no 2 from master" >> first.txt
+                     git merge dev 
+
+Merge Conflict: 
+                     mkdir demo
+                     cd demo
+                     git init
+                     echo "hello" > first.txt 
+                     git add . && git commit -m "add first.txt"
+                     git checkout -b dev
+                     echo "hello from dev" >> first.txt
+                     git add . && git commit -m "modify first.txt"
+                     git checkout master 
+                     echo "hi no 2 from master" >> first.txt
+                     git add . && git commit -m "modify first.txt no 2 from master"
+                     git merge dev
